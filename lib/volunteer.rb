@@ -13,7 +13,9 @@ class Volunteer
   end
 
   def self.all
+    select_volunteers = DB.exec("SELECT * FROM volunteers;")
     volunteers = []
+    volunteers.push(select_volunteers)
   end
 
 
