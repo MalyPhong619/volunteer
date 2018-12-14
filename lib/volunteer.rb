@@ -17,11 +17,14 @@ class Volunteer
   end
 
   def self.all
-    select_volunteers = DB.exec("SELECT * FROM volunteers;")
-    volunteers = []
-    select_volunteers.each() do |volunteer|
-      volunteers.push(Volunteer.new({:name => volunteer.name, :project_id => volunteer.project_id, :id => volunteer.id}))
+    volunteers = DB.exec("SELECT * FROM volunteers;")
+    many_volunteers = []
+    volunteers.each() do |volunteer|
+      name = volunteer.fetch("name")
+      project_id = volunteer.fetch("project_id").to_i()
+      id = volunteer.fetch("id").to_i()
+      many_volunteers.push(Volunteer.new({:name => name, :project_id => project_id, :id => id}))
     end
-    volunteers
+    many_volunteers
   end
 end
