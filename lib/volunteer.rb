@@ -8,6 +8,10 @@ class Volunteer
     @id = attributes.fetch(:id)
   end
 
+  def ==(another_volunteer)
+   self.name().==(another_volunteer.name())
+  end
+
   # def save
   #   result = DB.exec("INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', '#{@project_id}') RETURNING id;")
   # end
