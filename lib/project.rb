@@ -18,13 +18,6 @@ class Project
 
   def self.all
     projects = []
-    result = DB.exec("SELECT * FROM volunteers;")
-    result.each() do |project|
-    title  = volunteer.fetch("title")
-    id = volunteer.fetch("id").to_i
-      projects.push(Project.new({:title => name, :id => id}))
-    end
-    projects
   end
 
 
