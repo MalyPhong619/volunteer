@@ -14,7 +14,6 @@ class Volunteer
 
   def save
     result = DB.exec("INSERT INTO volunteers (name, project_id) VALUES ('#{@name}', #{@project_id}) RETURNING id;")
-
   end
 
   def self.all
@@ -36,5 +35,4 @@ class Volunteer
     id = volunteer.fetch("id").to_i
     Volunteer.new({:name => name, :id => id, :project_id => project_id})
   end
-
 end
