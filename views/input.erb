@@ -8,6 +8,6 @@
 
 <ul>
   <% @projects.each do |project| %>
-  <a href="/projects/<%= project.id %>"><%= project.title %></a>
+  <li><a href="/project/<%= project.id %>"><%= project.title %></a></li>
     <% end %>
 </ul>
