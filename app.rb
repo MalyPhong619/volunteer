@@ -20,3 +20,18 @@ post ('/') do
   @projects = Project.all
   erb(:input)
 end
+
+get ('/projects/:id') do
+  @projects = Project.all
+  @volunteers = Volunteer.all
+  erb(:projects)
+end
+
+post ('/projects/:id') do
+  project_id = params[:id]
+  name = params.fetch("name")
+  volunteer = Volunteer.new({:name => name, :id => nil, :project_id => project_id})
+  volunteer.save
+  @volunteers = Volunteer.all
+  erb(:projects)
+end
