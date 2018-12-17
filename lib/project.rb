@@ -16,7 +16,6 @@ class Project
     @id = result.first.fetch("id").to_i
   end
 
-
   def self.all
     projects = []
     result = DB.exec("SELECT * FROM projects;")
@@ -47,5 +46,9 @@ class Project
     volunteers
   end
 
-
+  def update(attributes)
+    @title = attributes.fetch(:title)
+    @id = self.id()
+    DB.exec("UPDATE projects SET title = '#{@title}' WHERE id = #{@id};")
+  end
 end
