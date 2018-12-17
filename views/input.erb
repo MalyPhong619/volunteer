@@ -4,10 +4,16 @@
 <button type="submit" class="btn btn-info">Create Project</button>
 </form>
 
-<h1>Projects:</h1>
 
-<ul>
-  <% @projects.each do |project| %>
-  <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
-    <% end %>
-</ul>
+
+
+
+
+<% if @projects.any?() %>
+<h1>Projects:</h1>
+      <ul>
+        <% @projects.each do |project| %>
+        <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
+          <% end %>
+      </ul>
+      <% end %>
