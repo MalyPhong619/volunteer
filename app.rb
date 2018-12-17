@@ -33,12 +33,12 @@ post ('/projects/:id') do
   @project = Project.find(id)
   @project.update({:title => title, :id => nil})
   @projects = Project.all
-  erb (:projects)
+  redirect '/'
 end
 
 delete ('/projects/:id') do
   @project = Project.find(params.fetch("id").to_i)
   @project.delete
   @projects = Project.all
-  erb (:input)
+  redirect '/'
 end
