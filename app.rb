@@ -21,17 +21,24 @@ post ('/') do
   erb(:input)
 end
 
-get ('/project/:id') do
+get ('/projects/:id') do
   id = params[:id].to_i
   @project = Project.find(id)
   erb (:projects)
 end
 
-post ('/project/:id') do
+post ('/projects/:id') do
   title = params.fetch("title")
   id = params[:id].to_i
   @project = Project.find(id)
   @project.update({:title => title, :id => nil})
   @projects = Project.all
   erb (:projects)
+end
+
+delete ('/projects/:id') do
+  @project = Project.find(params.fetch("id").to_i)
+  @project.delete
+  @projects = Project.all
+  erb (:input)
 end

@@ -1,8 +1,13 @@
-<form action="/project/<%= @project.id %>" method="post">
+<form action="/projects/<%= @project.id %>" method="post">
 <label for="title">Edit Project Title: </label>
 <input type="text" name="title" id="title">
 <button type="submit" class="btn btn-info">Update Project</button>
 </form>
+
+<form action="/projects/<%= @project.id %>" method="post">
+   <input name="_method" type="hidden" value="delete" placeholder="<%= @project.title%>">
+   <button type="submit" class="btn btn-danger">Delete Project</button>
+   <form>
 
 
 <h1><%= @project.title %></h1>
