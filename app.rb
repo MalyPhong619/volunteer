@@ -56,6 +56,7 @@ post ('/projects/:id/volunteer') do
   project_id = params[:id].to_i
   @project = Project.find(project_id)
   @volunteer = Volunteer.new({:name => name, :id => nil, :project_id => project_id})
+  @volunteer.save
   @volunteers = Volunteer.all
   erb (:volunteers)
 end
