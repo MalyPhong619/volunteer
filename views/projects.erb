@@ -10,5 +10,6 @@
   <input name="_method" type="hidden" value="delete" placeholder="<%= @project.title%>">
   <button type="submit" class="btn btn-danger">Delete Project</button>
 </form>
+<a href="/projects/<%= @project.id %>/volunteer"><button type="button" class="btn btn-info">Add Volunteer</button></a>
 
 <a href="/"><button type="button" class="btn btn-info">Home</button></a>
