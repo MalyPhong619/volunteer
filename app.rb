@@ -10,6 +10,13 @@ DB = PG.connect({:dbname => "volunteer_tracker"})
 
 get ('/') do
   @projects = Project.all
-  @volunteers = Volunteer.all
+  erb(:input)
+end
+
+post ('/') do
+  title = params.fetch("title")
+  project = Project.new({:title => title, :id => nil})
+  project.save
+  @projects = Project.all
   erb(:input)
 end

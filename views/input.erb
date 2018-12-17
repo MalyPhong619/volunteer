@@ -1,1 +1,13 @@
-<h1>This Workss</h1>
+<form method="post">
+<label for="title">Project Name: </label>
+<input type="text" name="title" id="title">
+<button type="submit" class="btn btn-info">Create Project</button>
+</form>
+
+<h1>Projects:</h1>
+
+<ul>
+  <% @projects.each do |project| %>
+  <li><%= project.title %></li>
+    <% end %>
+</ul>
