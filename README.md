@@ -14,6 +14,11 @@ _This application allows a user to add multiple projects and add volunteers to t
 * _Open with simple text editor_
 * _With terminal/bash change directory run :: ruby app.rb_
 
+## Create Database and Tables
+_Inside main project directory_
+* _With terminal/bash run :: createdb volunteer_tracker_
+* _With terminal/bash run :: psql volunteer_tracker < my_database.sql_
+
 
 ## Support and contact details
 
@@ -22,7 +27,7 @@ _If there are any concerns or you would like to contribute to the code place ema
 ## Technologies Used
 
 _Plain text editor (ATOM)_
-_Ruby 2.5.1_
+_Ruby 2.5.3_
 
 ### License
 
