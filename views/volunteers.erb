@@ -7,10 +7,12 @@
 </form>
 
 
+<% @volunteers.each do |volunteer| %>
 <ul>
-  <% @volunteers.each do |volunteer| %>
+  <% if @project.id == volunteer.project_id %>
   <li><%= volunteer.name %></li>
-    <% end %>
 </ul>
+<% end %>
+<% end %>
 
-<a href="/"> <button type="button" name="button">Home</button> </a>
+<a href="/"> <button type="button" class="btn btn-info">Home</button> </a>
