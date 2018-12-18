@@ -68,3 +68,12 @@ get ('/volunteer/:id') do
   @volunteers = Volunteer.all
   erb (:edit_volunteer)
 end
+
+post ('/volunteer/:id') do
+  name = params.fetch("name")
+  id = params[:id].to_i
+  @volunteer = Volunteer.find(id)
+  @volunteer.update({:name => name, :project_id => nil, :id => nil})
+  @volunteers = Volunteer.all
+  erb (:edit_volunteer)
+end

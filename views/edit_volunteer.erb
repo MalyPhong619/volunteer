@@ -1,1 +1,10 @@
-THIS WORKS
+<h1 class="jumbotron"><%= @volunteer.name %></h1>
+
+<div class="row">
+  <div class="col-md-6">
+    <form action="/volunteer/<%= @volunteer.id %>" method="post">
+      <label for="name">Edit Volunteer's Name: </label>
+      <input type="text" name="name" placeholder="<%= @volunteer.name%>">
+      <button type="submit" class="btn btn-info">Update Volunteer</button>
+    </form>
+  </div>
