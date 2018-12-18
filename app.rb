@@ -77,3 +77,10 @@ post ('/volunteer/:id') do
   @volunteers = Volunteer.all
   erb (:edit_volunteer)
 end
+
+delete ('/volunteer/:id') do
+  @volunteer = Volunteer.find(params.fetch("id").to_i)
+  @volunteer.delete
+  @volunteers = Volunteer.all
+  redirect '/'
+end

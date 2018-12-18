@@ -8,3 +8,11 @@
       <button type="submit" class="btn btn-info">Update Volunteer</button>
     </form>
   </div>
+  <div class="col-md-3">
+    <form action="/volunteer/<%= @volunteer.id %>" method="post">
+      <input name="_method" type="hidden" value="delete" placeholder="<%= @volunteer.name%>">
+      <button type="submit" class="btn btn-danger">Delete Volunteer</button>
+      <a href="/"><button type="button" class="btn btn-info">Home</button></a>
+    </form>
+  </div>
+</div>
