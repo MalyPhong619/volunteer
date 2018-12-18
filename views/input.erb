@@ -1,19 +1,19 @@
-<form method="post">
-<label for="title">Project Name: </label>
-<input type="text" name="title" id="title">
-<button type="submit" class="btn btn-info">Create Project</button>
-</form>
-
-
-
-
-
-
-<% if @projects.any?() %>
-<h1>Projects:</h1>
-      <ul>
-        <% @projects.each do |project| %>
-        <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
-          <% end %>
-      </ul>
+<div class="row">
+  <div class="col-md-6">
+    <form method="post">
+      <label for="title">Project Name: </label>
+      <input type="text" name="title" id="title">
+      <button type="submit" class="btn btn-info">Create Project</button>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <% if @projects.any?() %>
+    <h1>Projects:</h1>
+    <ul>
+      <% @projects.each do |project| %>
+      <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
       <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>

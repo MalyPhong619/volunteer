@@ -1,18 +1,23 @@
 <h1 class="jumbotron"><%= @project.title %></h1>
 
-<form method="post">
-  <label for="name">Volunteer Name: </label>
-  <input type="text" name="name" id="name">
-  <button type="submit" class="btn btn-info">Update Volunteer</button>
-</form>
+<div class="row">
+  <div class="col-md-6">
+    <form method="post">
+      <label for="name">Volunteer Name: </label>
+      <input type="text" name="name" id="name">
+      <button type="submit" class="btn btn-info">Add Volunteer</button>
+    </form>
+    <a href="/"><button type="button" class="btn btn-info">Home</button> </a>
+  </div>
 
-
-<% @volunteers.each do |volunteer| %>
-<ul>
-  <% if @project.id == volunteer.project_id %>
-  <li><%= volunteer.name %></li>
-</ul>
-<% end %>
-<% end %>
-
-<a href="/"> <button type="button" class="btn btn-info">Home</button> </a>
+  <div class="col-md-6">
+    <h2>Volunteers:</h2>
+    <% @volunteers.each do |volunteer| %>
+    <ul>
+      <% if @project.id == volunteer.project_id %>
+      <li><%= volunteer.name %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>

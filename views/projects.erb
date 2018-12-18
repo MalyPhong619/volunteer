@@ -1,18 +1,20 @@
 <h1 class="jumbotron"><%= @project.title %></h1>
 
 <div class="row">
+  <div class="col-md-6">
+    <form action="/projects/<%= @project.id %>" method="post">
+      <label for="title">Edit Project Title: </label>
+      <input type="text" name="title" placeholder="<%= @project.title%>">
+      <button type="submit" class="btn btn-info">Update Project</button>
+    </form>
+  </div>
   
+  <div class="col-md-3">
+    <form action="/projects/<%= @project.id %>" method="post">
+      <input name="_method" type="hidden" value="delete" placeholder="<%= @project.title%>">
+      <button type="submit" class="btn btn-danger">Delete Project</button>
+      <a href="/projects/<%= @project.id %>/volunteer"><button type="button" class="btn btn-info">Add Volunteer</button></a>
+      <a href="/"><button type="button" class="btn btn-info">Home</button></a>
+    </form>
+  </div>
 </div>
-<form action="/projects/<%= @project.id %>" method="post">
-  <label for="title">Edit Project Title: </label>
-  <input type="text" name="title" placeholder="<%= @project.title%>">
-  <button type="submit" class="btn btn-info">Update Project</button>
-</form>
-
-<form action="/projects/<%= @project.id %>" method="post">
-  <input name="_method" type="hidden" value="delete" placeholder="<%= @project.title%>">
-  <button type="submit" class="btn btn-danger">Delete Project</button>
-</form>
-<a href="/projects/<%= @project.id %>/volunteer"><button type="button" class="btn btn-info">Add Volunteer</button></a>
-
-<a href="/"><button type="button" class="btn btn-info">Home</button></a>
