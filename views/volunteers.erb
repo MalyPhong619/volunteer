@@ -15,7 +15,7 @@
     <% @volunteers.each do |volunteer| %>
     <ul>
       <% if @project.id == volunteer.project_id %>
-      <li><%= volunteer.name %></li>
+      <li><a href="/volunteer/<%= volunteer.id %>"><%= volunteer.name %></a> </li>
       <% end %>
     </ul>
     <% end %>

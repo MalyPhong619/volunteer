@@ -60,3 +60,11 @@ post ('/projects/:id/volunteer') do
   @volunteers = Volunteer.all
   erb (:volunteers)
 end
+
+get ('/volunteer/:id') do
+  @volunteers = Volunteer.all
+  id = params[:id].to_i
+  @volunteer = Volunteer.find(id)
+  @volunteers = Volunteer.all
+  erb (:edit_volunteer)
+end
